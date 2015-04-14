@@ -60,6 +60,7 @@ define('MINIMUM_PHP_VERSION','5.3.3');
     'admin','jack','john'
 ),</pre>
                 </li>
+                <li>Change <strong>config.php</strong> base_url, it should usually be set to "/"</li>
                 <li>Now setup the XMR daemon and wallet, if you are unsure how, you can read how to do that <a href="https://moneroeconomy.com/xmr-integration">https://moneroeconomy.com/xmr-integration</a></li>
             </ol>
         </div>

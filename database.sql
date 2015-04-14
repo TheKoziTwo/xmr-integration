@@ -7,11 +7,7 @@ CREATE TABLE IF NOT EXISTS `info` (
 
 INSERT INTO `info` (`name`, `value`, `comment`) VALUES
 ('1_block_height', '0', 'Last checked block height for monero'),
-('1_display_block_height', '0', NULL),
-('last_cron', '0', 'When last cron was run (unixtime)'),
-('member_count', '0', NULL);
-
--- --------------------------------------------------------
+('1_display_block_height', '0', NULL);
 
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -21,16 +17,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `users_assets` (
   `user_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Foreign key to user.user_id',
   `asset_id` int(11) unsigned NOT NULL COMMENT '1 = XMR, we use this field to allow multiple currencies/assets',
   `balance` decimal(56,24) NOT NULL DEFAULT '0.000000000000000000000000' COMMENT 'Current available balance',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `users_cn_payment_ids` (
   `pid` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -43,8 +35,6 @@ CREATE TABLE IF NOT EXISTS `users_cn_payment_ids` (
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `users_cn_transactions` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'CryptoNote Txn ID',
   `pid` bigint(20) unsigned NOT NULL COMMENT 'Foreign key to users_cn_payment_ids.pid',
@@ -56,8 +46,6 @@ CREATE TABLE IF NOT EXISTS `users_cn_transactions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `users_transactions` (
   `id` bigint(20) unsigned NOT NULL COMMENT 'Txn ID',
   `user_id` bigint(20) unsigned NOT NULL COMMENT 'Foreign key to user.user_id',
@@ -67,8 +55,6 @@ CREATE TABLE IF NOT EXISTS `users_transactions` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `withdraws_complete` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Withdraw ID',
@@ -82,8 +68,6 @@ CREATE TABLE IF NOT EXISTS `withdraws_complete` (
   `txn` text NOT NULL COMMENT 'Transaction id onec status is 1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Completed withdraws' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `withdraws_pending` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Withdraw ID',
