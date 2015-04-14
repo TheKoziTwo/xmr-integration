@@ -15,18 +15,18 @@ $config = array(
     ),
     'site' => array(
         // If you're running script at root of domain leave this one "/", if you run in a subdirectory such as "http://YOURDOMAIN.com/xmr/exchange" you should enter "/xmr/exchange"
-        'base_url' => '/xmr/store', 
+        'base_url' => '/', 
     ),
     'asset' => array(
                 XMR => array(
                     // Your receiving XMR address, should be the one in your simplewallet
                     'address'       => '4ABnA7A4NuvJFkUdEWrwxmQa2z1s6UKuw3n6LxkC5hsHh5SFBaj7WUDEEepy9VZE85FY5862roiDS26G519ktCTxGPAgGCD', 
                     // Default is 127.0.0.1
-                    'daemon_host'   => '192.168.10.54',
+                    'daemon_host'   => '127.0.0.1',
                     // Default is 18081
                     'daemon_port'   => '18081',
                     // Default is 127.0.0.1
-                    'wallet_host'   => '192.168.10.54',
+                    'wallet_host'   => '127.0.0.1',
                     // Default is 18082
                     'wallet_port'   => '18082',
                     // The minimum confirmations before an XMR transaction is approved (Default: 15)
