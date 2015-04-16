@@ -144,7 +144,7 @@ class User {
      * @param   int     user id
      * @return  void
      */ 
-    public static function logout($user_id)
+    public static function logout()
     {
         unset($_SESSION['user_id']);
     }
