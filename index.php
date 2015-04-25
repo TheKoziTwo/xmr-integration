@@ -97,6 +97,10 @@ if(User::is_logged_in())
                     $_SESSION['flash_message'] = '<p class="flashmsg bg-success">Your withdraw has been successfully submitted!</p>';
                     refresh();
                 }
+                else
+                {
+                    $db->query('ROLLBACK');    
+                }
             }
             else
             {

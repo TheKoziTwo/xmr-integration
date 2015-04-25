@@ -144,9 +144,8 @@ abstract class Asset {
             LIMIT 1
         ');
 
-        if($res)
+        if($row = $res->fetch_assoc())
         {
-            $row = $res->fetch_assoc();
             return $row['balance'];
         }
         

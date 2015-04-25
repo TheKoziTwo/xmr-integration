@@ -23,7 +23,7 @@
 
             <legend>Account Balance</legend>
             
-            <p>Current balance: <strong><?=($balance===null?'0.00':$balance);?></strong> XMR</p>
+            <p>Current balance: <strong><?=$balance;?></strong> XMR</p>
             
             <br />
             <form action="" method="post">
