@@ -1,4 +1,5 @@
-<?php if(!defined('APP')) exit; ?>
+<?php include('qr/qrlib.php');
+ if(!defined('APP')) exit; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -23,18 +24,19 @@
 
             <legend>Account Balance</legend>
             
-            <p>Current balance: <strong><?=$balance;?></strong> XMR</p>
+            <p>Current balance: <strong><?php echo $balance;?></strong> XMR</p>
             
             <br />
             <form action="" method="post">
                 <legend>Deposit</legend>
-            
                 <p>XMR: <strong><?=$asset_config['address'];?></strong></p>
                 <p>Payment ID: <strong><?=$payment_id;?></strong></p>
                 <button type="submit" class="btn btn-success" name="new_payment_id">Generate new payment id</button>
-            
+
             </form>
-            
+<img src="qrPR.php?id=<?php echo $payment_id; ?>" alt="QR code Payment Request ID" />
+<img src="qrXMR.php?id=<?php echo $asset_config['address']; ?>" alt="QR code XMR address" />
+     
             <br /><br />
             
             <form action="" method="post">
