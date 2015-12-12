@@ -33,10 +33,19 @@
                 <p>Payment ID: <strong><?=$payment_id;?></strong></p>
                 <button type="submit" class="btn btn-success" name="new_payment_id">Generate new payment id</button>
 
-            </form>
-<img src="qrPR.php?id=<?php echo $payment_id; ?>" alt="QR code Payment Request ID" />
-<img src="qrXMR.php?id=<?php echo $asset_config['address']; ?>" alt="QR code XMR address" />
-     
+            </form><br />
+            <table>
+            <tr>
+            <td>
+            QR Code XMR address:<br />
+            <img src="qrXMR.php?id=<?php echo $asset_config['address']; ?>" title="QR code XMR address" />
+            </td>
+            <td>&lt;---------------------------&gt;</td>
+            <td>QR Code Payment ID:<br />
+            <img src="qrPR.php?id=<?php echo $payment_id; ?>" title="QR code Payment Request ID" />
+            </td>
+            </tr>
+            </table>
             <br /><br />
             
             <form action="" method="post">
