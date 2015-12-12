@@ -6,8 +6,8 @@ CREATE TABLE IF NOT EXISTS `info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `info` (`name`, `value`, `comment`) VALUES
-('1_block_height', '0', 'Last checked block height for monero'),
-('1_display_block_height', '0', NULL);
+('1_block_height', '1', 'Last checked block height for monero'),
+('1_display_block_height', '1', NULL);
 
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` bigint(20) NOT NULL AUTO_INCREMENT,
