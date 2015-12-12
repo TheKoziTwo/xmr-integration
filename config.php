@@ -40,7 +40,7 @@ $config = array(
                     // Minimum withdraw amount in XMR
                     'min_withdraw'  => '0.1', 
                     // Fee per withdraw in XMR
-                    'withdraw_fee'  => '0.05',
+                    'withdraw_fee'  => '0.01',
                     // Properties is sent to the CryptoNote object, DO NOT change unless you know what you are doing
                     'properties'    => array(
                             'protocol'   => 'CryptoNote',
