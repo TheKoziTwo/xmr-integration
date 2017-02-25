@@ -82,7 +82,7 @@ foreach($config['asset'] as $asset_id => $conf)
     }
 }
 
-$error = new Error();
+$error = new Error_();
 
 // Logout user
 if(isset($_POST['logout']) AND csrf_check($_POST['csrf_token'])) 
