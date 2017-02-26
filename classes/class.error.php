@@ -6,7 +6,7 @@
  * @copyright  2015
  * @license    Public Domain
  */ 
-class Error {
+class Error_ {
     
     private $errors = array();
     
