@@ -88,7 +88,8 @@ if(User::is_logged_in())
                         'date_requested'    => array('UTC_TIMESTAMP()'),
                         'asset_id'          => $post['asset_id'],
                         'mixin'             => $post['mixin'],
-                        'status'            => 1
+                        'status'            => 1,
+                        'error'             => '-'
                 ));
                 
                 if($db->query($sql))
