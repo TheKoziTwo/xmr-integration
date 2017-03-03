@@ -187,7 +187,7 @@ while(LOOP_FOREVER OR ! $has_run)
         
         $payments = array();
         
-        while($row = $result->fetch_array(MYSQL_ASSOC))
+        while($row = $result->fetch_array(MYSQLI_ASSOC))
         {
             // If there is not enough balance, we'll try again later ("break" instead of "continue" so that payment are processed as a queue, most fair)
             if(bc::is($row['amount'],'>',$wallet->get_unlocked_balance())) break;
