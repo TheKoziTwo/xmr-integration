@@ -33,7 +33,7 @@ class CryptoNote_Wallet {
      */ 
     public function __construct($host,$port)
     {
-        $this->wallet = new jsonRPCClient('http://'.$host.':'.$port.'/json_rpc');
+        $this->wallet = new jsonRPCClientWallet('http://'.$host.':'.$port.'/json_rpc');
     }   
     
     // ------------------------------------------------------------------------
