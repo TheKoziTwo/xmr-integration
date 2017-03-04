@@ -43,7 +43,7 @@ public function __call($method,$params) {
     $ch = curl_init($this->url);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
-	curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_DIGEST);
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_DIGEST);
     curl_setopt($ch, CURLOPT_USERPWD, RPC_CRED); // RPC_CRED is set in ../init.php
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $request);
