@@ -18,6 +18,9 @@ bcscale(24);
 // (requiring init.php to be run)
 define('APP',true);
 
+// RPC login credentials for monero-wallet-rpc. Use --rpc-login user:pass when starting the rpc wallet. 
+// Example: monero-wallet-rpc --rpc-login user:pass --wallet-file wallet.bin --rpc-bind-ip 127.0.0.1 --rpc-bind-port 18082
+define('RPC_CRED','user:pass');
 /* 
  * To run cron from command line (php cron.php) LOOP_FOREVER must be TRUE. 
  * It will then run until you cancel it. This is optimal and recommended.
@@ -48,6 +51,7 @@ $config = array();
 require_once('config.php');
 require_once('db.php');
 require_once('classes/jsonrpc2client.php');
+require_once('classes/jsonrpc2clientwallet.php');
 require_once('functions.php');
 require_once('classes/class.bc.php');
 require_once('classes/class.error.php');
